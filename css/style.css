@@ -17,6 +17,9 @@ h1 {
   color: var(--black) !important;
   font-weight: 800 !important;
 }
+h3 {
+  text-align: center;
+}
 
 p {
   font-family: var(--font-poppins) !important;
@@ -38,5 +41,5 @@ p {
   border-radius: 20px;
   box-shadow: 0 0 10px;
   padding: 40px;
-  
+  margin: 20px;
 }
