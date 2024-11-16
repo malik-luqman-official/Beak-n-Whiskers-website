@@ -10,6 +10,13 @@
 
   --font-host-grotesk: "Host Grotesk", sans-serif;
   --font-poppins: "Poppins", sans-serif;
+
+  --bnw-box-shadow:0 0 40px 40px #eeeeee;
+}
+
+body{
+  font-family: var(--font-host-grotesk) !important;
+
 }
 
 h1 {
@@ -33,10 +40,37 @@ p {
   font-weight: 500;
   color: var(--btn-color);
 }
+
+
+/* FORMS */
 .bnw-form {
-  background-image: linear-gradient(var(--light-pink), var(--pink)) !important;
+  background-image: linear-gradient(var(--light-pink), var(--pink)) ;
   border-radius: 20px;
   box-shadow: 0 0 10px;
   padding: 40px;
+  box-shadow:var(--bnw-box-shadow);
   
+}
+.bnw-form-input{
+  border:none;
+  background-color: rgba(255, 255, 255, 0.801);
+  color:white;
+  padding: 10px 20px;
+  border-radius: 100px; 
+}
+.main-form-button {
+  border: none;
+  background-color: #ffffff;
+  border-radius: 100px;
+  padding: 10px 50px;
+  font-family: var(--font-host-grotesk);
+  font-weight: 500;
+  color: var(--btn-color);
+}
+.main-form-button:hover {
+  color: white;
+  background-color: black;
+}
+select.form-control:not([size]):not([multiple]){
+  height: auto!important;
 }
