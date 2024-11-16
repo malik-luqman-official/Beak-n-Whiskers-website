@@ -1,37 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
-    --black:     #000000;
-    --white:     #ffffff;
-    --gray:      #333333;
-    --pink:      #ff9972;
-    --light-pink:#fed3c3;
-    --btn-color: #2c2c2d;
+  --black: #000000;
+  --white: #ffffff;
+  --gray: #333333;
+  --pink: #ff9972;
+  --light-pink: #fed3c3;
+  --btn-color: #2c2c2d;
 
-    --font-host-grotesk: "Host Grotesk", sans-serif;
-    --font-poppins:"Poppins", sans-serif;
-
+  --font-host-grotesk: "Host Grotesk", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
 }
 
-h1{
-    font-family: var(--font-host-grotesk)!important;
-    color: var(--black)!important;
-    font-weight: 800!important;
+h1 {
+  font-family: var(--font-host-grotesk) !important;
+  color: var(--black) !important;
+  font-weight: 800 !important;
 }
 
-p{
- font-family: var(--font-poppins)!important;
- font-size: 18px!important;
- color: var(--gray)!important;
-
+p {
+  font-family: var(--font-poppins) !important;
+  font-size: 18px !important;
+  color: var(--gray) !important;
 }
-.main-button{
-    border: none;
-    /* background-color: #000000; */
-    border-radius: 100px;
-    padding: 10px 20px;
-    background-image: linear-gradient(var(--light-pink), var(--pink))!important;
-    font-family: var(--font-host-grotesk);
-    font-weight: 500;
-    color: var(--btn-color);
+.main-button {
+  border: none;
+  /* background-color: #000000; */
+  border-radius: 100px;
+  padding: 10px 20px;
+  background-image: linear-gradient(var(--light-pink), var(--pink)) !important;
+  font-family: var(--font-host-grotesk);
+  font-weight: 500;
+  color: var(--btn-color);
+}
+.bnw-form {
+  background-image: linear-gradient(var(--light-pink), var(--pink)) !important;
+  border-radius: 20px;
+  box-shadow: 0 0 10px;
+  padding: 40px;
+  
 }
