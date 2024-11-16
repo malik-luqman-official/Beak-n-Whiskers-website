@@ -19,23 +19,23 @@ body{
 
 }
 
-h1 {
+
+/* HEADINGS */
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-host-grotesk) !important;
   color: var(--black) !important;
-  font-weight: 800 !important;
+  font-weight: 700 !important;
 }
-h3 {
-  text-align: center;
-}
-
-p {
+p, span {
   font-family: var(--font-poppins) !important;
   font-size: 18px !important;
   color: var(--gray) !important;
 }
+
+
+/* BUTTONS */
 .main-button {
   border: none;
-  /* background-color: #000000; */
   border-radius: 100px;
   padding: 10px 20px;
   background-image: linear-gradient(var(--light-pink), var(--pink)) !important;
