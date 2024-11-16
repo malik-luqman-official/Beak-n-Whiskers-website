@@ -76,5 +76,4 @@ p {
 }
 select.form-control:not([size]):not([multiple]){
   height: auto!important;
-  margin: 20px;
 }
