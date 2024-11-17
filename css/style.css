@@ -11,27 +11,30 @@
   --font-host-grotesk: "Host Grotesk", sans-serif;
   --font-poppins: "Poppins", sans-serif;
 
-  --bnw-box-shadow:0 0 40px 40px #eeeeee;
+  --bnw-box-shadow: 0 0 40px 40px #eeeeee;
 }
 
-body{
+body {
   font-family: var(--font-host-grotesk) !important;
-
 }
-
 
 /* HEADINGS */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-host-grotesk) !important;
   color: var(--black) !important;
   font-weight: 700 !important;
 }
-p, span {
+p,
+span {
   font-family: var(--font-poppins) !important;
   font-size: 18px !important;
   color: var(--gray) !important;
 }
-
 
 /* BUTTONS */
 .main-button {
@@ -44,22 +47,19 @@ p, span {
   color: var(--btn-color);
 }
 
-
 /* FORMS */
 .bnw-form {
-  background-image: linear-gradient(var(--light-pink), var(--pink)) ;
+  background-image: linear-gradient(var(--light-pink), var(--pink));
   border-radius: 20px;
   box-shadow: 0 0 10px;
   padding: 40px;
-  box-shadow:var(--bnw-box-shadow);
-  
+  box-shadow: var(--bnw-box-shadow);
 }
-.bnw-form-input{
-  border:none;
+.bnw-form-input {
+  border: none;
   background-color: rgba(255, 255, 255, 0.801);
-  color:white;
   padding: 10px 20px;
-  border-radius: 100px; 
+  border-radius: 100px;
 }
 .main-form-button {
   border: none;
@@ -74,6 +74,6 @@ p, span {
   color: white;
   background-color: black;
 }
-select.form-control:not([size]):not([multiple]){
-  height: auto!important;
+select.form-control:not([size]):not([multiple]) {
+  height: auto !important;
 }
