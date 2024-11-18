@@ -1,0 +1,43 @@
+.picture-preview {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  position: relative;
+  border: 2px solid #ccc;
+}
+
+.picture-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none; /* Initially hidden */
+}
+
+.upload-label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.picture-preview:hover .upload-label {
+  opacity: 1; /* Show on hover */
+}
+
+input[type="file"] {
+  display: none; /* Hide the default file input */
+}

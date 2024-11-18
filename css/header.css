@@ -3,3 +3,49 @@
   padding-left: 50px;
   color: #000000;
 }
+/* Styling for the container */
+.container-fluid {
+  position: relative;
+  width: 100%; /* Full-width container */
+  margin: 0 auto; /* Center container */
+}
+
+.background-img {
+  width: 100%; /* Make the image full width */
+  height: 200px; /* Fixed height for the image */
+  object-fit: cover; /* Maintain aspect ratio and cover the space */
+}
+
+/* Full-screen overlay */
+.overlay {
+  position: relative;
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Same height as the image */
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.content {
+  position: absolute; /* Ensure it stays on top of the image */
+  top: 0; /* Start at the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background: #ff9a72a1;
+  display: flex; /* Flexbox for centering text */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.title {
+  color: #ffffff; /* White text */
+  background-color: #fed3c3bd;
+  height: 100px;
+  width: 500px;
+  padding-top: 25px;
+  border-radius: 20px;
+  font-size: 2rem; /* Adjust font size as needed */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center-align the text */
+}
