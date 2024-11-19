@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <title>Register as a Doctor</title>
+    <title>Welcome Back!</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,19 +12,21 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
   </head>
   <body>
     <!--sign in form -->
-    <section class="container">
+    <section class="container py-5 my-5 d-flex justify-content-center">
       <div class="col-lg-6">
-        <form class="bnw-form">
+        <form id="signInForm" class="bnw-form">
           <h3>Sign In</h3>
           <p class="mb-4" style="font-size: 16px !important">
             Sign in to your Beak n Whiskers account to manage your pet care,
-            book appointments, and explore all our features.
+            book appointments, and explore all our features.
           </p>
           <div class="form-group mt-3">
-            <label>E-mail *</label>
+            <label for="email">E-mail *</label>
             <input
               type="email"
               class="form-control bnw-form-input"
@@ -35,7 +37,7 @@
             />
           </div>
           <div class="form-group mt-3">
-            <label>Password *</label>
+            <label for="password">Password *</label>
             <input
               type="password"
               class="form-control bnw-form-input"
@@ -52,4 +54,10 @@
       </div>
     </section>
   </body>
+  
+  <script src="js/bootstrap.min.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/sign-in.js"></script>
+  
 </html>

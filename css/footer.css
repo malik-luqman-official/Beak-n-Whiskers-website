@@ -1,0 +1,15 @@
+.footer{
+    background-color: black;
+}
+.footer a, footer p{
+    color: white!important;
+}
+.footer span{
+    color: var(--pink)!important;
+}
+.footer h5{
+    color: white!important;
+}
+.footer-logo{
+filter: saturate(0), brightness(100)!important;
+}
