@@ -63,9 +63,11 @@ header.innerHTML = `
           <div id="userDropdown" class="dropdown" style="display: none;">
             <a>User Name</a>
           </div>
+          <a href="add-pet.html">
           <button id="addPetBtn" data-mdb-ripple-init type="button" class="main-button ml-4" style="display: none;">
             Add Your Pet
           </button>
+          </a>
         </div>
       </div>
       <!-- Collapsible wrapper -->

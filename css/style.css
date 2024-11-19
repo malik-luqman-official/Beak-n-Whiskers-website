@@ -66,6 +66,19 @@ span {
   color: white;
   background-image: linear-gradient(var(--black), var(--black)) !important;
 }
+.main-button-white{
+  background-image: linear-gradient(var(--white), var(--white)) !important;  
+  color: var(--black);
+  border: none;
+  border-radius: 100px;
+  padding: 10px 20px;
+  font-family: var(--font-host-grotesk);
+  font-weight: 500;
+}
+.main-button-white:hover{
+  color: white;
+  background-image: linear-gradient(var(--black), var(--black)) !important;
+}
 
 /* FORMS */
 .bnw-form {

@@ -1,14 +1,26 @@
-const API_URL = 'http://localhost:3000/api/v1';
-const token = localStorage.getItem('jwtToken');
-const petId = querySelector('query')
+document.addEventListener('DOMContentLoaded', async function () {
+    const API_URL = 'http://localhost:3000/api/v1';
+    const token = localStorage.getItem('jwtToken'); // Retrieve JWT token
 
-async function fetchPetData() {
+    if (!token) {
+        console.error("No token found in local storage.");
+        return;
+    }
+
+    // Get the pet ID from the URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const petId = urlParams.get('id');
+
+    if (!petId) {
+        console.error("No pet ID found in URL.");
+        return;
+    }
+
     try {
         const response = await fetch(`${API_URL}/pet/${petId}`, {
-            method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             }
         });
 
@@ -16,79 +28,54 @@ async function fetchPetData() {
             throw new Error('Failed to fetch pet data');
         }
 
-        const data = await response.json();
+        const pet = await response.json();
+        console.log(pet);  // Check the structure of the API response
 
-        if (data && data.pet) {
-            const pet = data.pet;
-            document.getElementById("petName").value = pet.petName;
-            document.getElementById("gender").value = pet.gender;
-            document.getElementById("dob").value = pet.birthDate;
-            document.getElementById("breed").value = pet.breed;
-            document.getElementById("color").value = pet.color;
-            document.getElementById("category").value = pet.category_id;
-            // Handle neutered
-            const neuteredRadio = document.querySelector(`input[name="neutered"][value="${pet.neutered ? 'yes' : 'no'}"]`);
-            if (neuteredRadio) neuteredRadio.checked = true;
+        if (pet && pet.data) {
+            const petDetails = pet.data;
+
+            // Populate the form with pet details
+            document.getElementById('petName').value = petDetails.petName || '';
+            document.getElementById('category').value = petDetails.category_id || ''; // Adjust category selection
+            document.getElementById('gender').value = petDetails.gender || '';
+            document.getElementById('dob').value = petDetails.birthDate || '';
+            document.getElementById('breed').value = petDetails.breed || '';
+            document.getElementById('color').value = petDetails.color || '';
+
+            // Set neutered option based on API data
+            if (petDetails.neutered) {
+                document.getElementById('neuteredYes').checked = true;
+            } else {
+                document.getElementById('neuteredNo').checked = true;
+            }
+        } else {
+            console.error('Pet data not found');
         }
+
     } catch (error) {
-        console.error("Error fetching pet data:", error);
-        alert("An error occurred while fetching the pet profile.");
+        console.error('Error fetching pet data:', error);
+    }
+});
+
+
+async function loadCategories() {
+    try {
+        const response = await fetch(`${API_URL}/categories`, {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            }
+        });
+        const categories = await response.json();
+        const categorySelect = document.getElementById('category');
+        categories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category.id;
+            option.textContent = category.name;
+            categorySelect.appendChild(option);
+        });
+    } catch (error) {
+        console.error('Error loading categories:', error);
     }
 }
 
-fetchPetData();
-
-
-document.getElementById("petForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    // Collect form data
-    const petName = document.getElementById("petName").value;
-    const gender = document.getElementById("gender").value;
-    const birthDate = document.getElementById("dob").value;
-    const breed = document.getElementById("breed").value;
-    const color = document.getElementById("color").value;
-    const neutered = document.querySelector('input[name="neutered"]:checked') ? 
-        document.querySelector('input[name="neutered"]:checked').value === 'yes' : false;
-    const selectedCategoryId = document.getElementById("category").value;
-
-    // Validate form fields before proceeding
-    if (!petName || !gender || !birthDate || !breed || !color || !selectedCategoryId || neutered === undefined) {
-        alert("Please fill all required fields.");
-        return;
-    }
-
-    const petData = {
-        petName,
-        gender,
-        birthDate,
-        breed,
-        color,
-        neutered,
-        category_id: selectedCategoryId
-    };
-
-    try {
-        const response = await fetch(`${API_URL}/pet/${petId}`, {
-            method: "PUT", 
-            body: JSON.stringify(petData),
-            headers: {
-                Authorization: `Bearer ${token}`,
-                "Content-Type": "application/json",
-            },
-        });
-
-        const result = await response.json();
-        if (response.ok) {
-            alert("Pet profile updated successfully!");
-            // Optionally redirect to a different page or reset the form
-            document.getElementById("petForm").reset();
-        } else {
-            console.error("Failed to update pet profile:", result);
-            alert("Failed to update pet profile: " + (result.message || "Unknown error"));
-        }
-    } catch (error) {
-        console.error("Error:", error);
-        alert("An error occurred while updating the pet profile.");
-    }
-});
