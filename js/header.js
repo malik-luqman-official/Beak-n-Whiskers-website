@@ -71,6 +71,7 @@ header.innerHTML = `
               <li><a class="dropdown-item" href="#">Logout</a></li>
             </ul>
           </div>
+          <a href="add-pet.html">
           <button id="addPetBtn" data-mdb-ripple-init type="button" class="main-button ml-4" style="display: none;">
             Add Your Pet
           </button>

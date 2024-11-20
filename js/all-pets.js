@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         const petCardsContainer = document.getElementById('pet-cards');
 
         if (data && data.data && data.data.length > 0) {
-            // Iterate through the pets and create a card for each one
             data.data.forEach(pet => {
                 const petCard = document.createElement('div');
                 petCard.classList.add('col');
@@ -37,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h5 class="card-title mt-2">${pet.petName}</h5>
-                                <span class="badge bg-primary">${pet.category_id.category}</span>
+                    <span class="badge bg-primary">${pet.category_id ? pet.category_id.category : 'No Category'}</span>
                             </div>
                             <hr>
                             <div class="d-flex justify-content-start">
