@@ -15,15 +15,19 @@ document.addEventListener("DOMContentLoaded", async function () {
       },
     });
 
+    console.log(response)
+
     if (!response.ok) {
       throw new Error("Failed to fetch doctors");
     }
 
+  
     const data = await response.json();
+    console.log(data)
     const doctorCardsContainer = document.getElementById("doctor-cards");
 
-    if (data && data.data && data.data.length > 0) {
-      data.data.forEach((doctor) => {
+    if (data && data.length > 0) {
+      data.forEach((doctor) => {
         const doctorCard = document.createElement("div");
         doctorCard.classList.add("col");
         doctorCard.innerHTML = `
@@ -57,6 +61,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     } else {
       doctorCardsContainer.innerHTML = "<p>No doctors found.</p>";
     }
+    
   } catch (error) {
     console.error("Error fetching doctors:", error);
     document.getElementById("doctor-cards").innerHTML =
