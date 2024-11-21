@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     <i class="fas fa-phone-alt me-2 text-muted"></i>
                     <span class="text-muted meta-data">${doctor.phone || "N/A"}</span>
                   </div>
-                  <div class="mb-2">
+                  <div class="my-2">
                     <i class="fas fa-envelope me-2 text-muted"></i>
                     <span class="text-muted meta-data">${doctor.email || "N/A"}</span>
                   </div>
