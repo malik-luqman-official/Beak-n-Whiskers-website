@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 
   try {
-    const response = await fetch(`${API_URL}/doctor/all`, {
+    const response = await fetch(`${API_URL}/doctor/approved`, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     <span class="text-muted meta-data">${doctor.email || "N/A"}</span>
                   </div>
                 </div>
-                <a href="doctor-profile.html?id=${doctor._id}">
+                <a href="doctor.html?id=${doctor._id}">
                   <button class="btn main-button mt-4">View Doctor Details</button>
                 </a>
               </div>

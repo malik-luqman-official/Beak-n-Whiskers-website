@@ -51,6 +51,7 @@ header.innerHTML = `
         <!-- Left links -->
 
         <div class="d-flex align-items-center mr-3">
+
           <!-- Show when logged out -->
           <a id="loginBtn" class="px-3 me-2" href="sign-in.html">
             Sign In
@@ -71,9 +72,14 @@ header.innerHTML = `
               <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
             </ul>
           </div>
-          <a href="add-pet.html">
+          <a href="#">
           <button id="addPetBtn" data-mdb-ripple-init type="button" class="main-button ml-4" style="display: none;">
             Add Your Pet
+          </button>
+          </a>
+          <a href="all-doctors.html">
+          <button id="bookAppointmentBtn" data-mdb-ripple-init type="button" class="main-button ml-3" style="display: none;">
+            Book an Appointment
           </button>
           </a>
         </div>
@@ -112,7 +118,6 @@ function decodeJWT(token) {
   return JSON.parse(jsonPayload); // Return the decoded payload
 }
 
-// Toggle buttons based on login state
 function updateNavbar() {
   const jwtToken = localStorage.getItem("jwtToken");
 
@@ -126,7 +131,11 @@ function updateNavbar() {
   document.getElementById("loginBtn").style.display = isLoggedIn ? "none" : "block";
   document.getElementById("signupBtn").style.display = isLoggedIn ? "none" : "block";
   document.getElementById("userDropdown").style.display = isLoggedIn ? "block" : "none";
-  document.getElementById("addPetBtn").style.display = isLoggedIn ? "block" : "none";
+
+  const addPetBtn = document.getElementById("addPetBtn");
+  const addPetLink = addPetBtn.closest("a"); // Get the parent <a> element
+  const bookAppointmentBtn = document.getElementById("bookAppointmentBtn");
+  const bookAppointmentLink = bookAppointmentBtn.closest("a"); // Get the parent <a> element
 
   if (isLoggedIn) {
     // Use decoded user data
@@ -136,18 +145,33 @@ function updateNavbar() {
     document.getElementById("userDropdown").querySelector("a").textContent =
       decodedToken.fullName || "User";
 
-    // Adjust the profile link based on the user's role
+    // Adjust the profile link and buttons based on the user's role
     if (decodedToken.role) {
       if (decodedToken.role === 'user') {
         profileLink.href = 'user-profile.html'; // Profile link for regular users
+        addPetBtn.style.display = "block";
+        addPetBtn.textContent = "Add Your Pet";
+        addPetLink.href = "add-pet.html"; // Set the correct link for users
+
+        bookAppointmentBtn.style.display = "block";
+        bookAppointmentBtn.textContent = "Book an Appointment";
+        bookAppointmentLink.href = "all-doctors.html"; // Set the correct link for booking appointments
       } else if (decodedToken.role === 'doctor') {
         profileLink.href = 'doctor-profile.html'; // Profile link for doctors
+        addPetBtn.style.display = "block";
+        addPetBtn.textContent = "View Appointments";
+        addPetLink.href = "all-appointments.html"; // Set the correct link for doctors
+
+        bookAppointmentBtn.style.display = "none"; // Hide for doctors
       }
     } else {
       console.error('User role is missing!');
     }
   }
 }
+
+
+
 
 // Logout functionality
 document.getElementById("logoutBtn").addEventListener("click", () => {
