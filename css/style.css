@@ -66,8 +66,8 @@ span {
   color: white;
   background-image: linear-gradient(var(--black), var(--black)) !important;
 }
-.main-button-white{
-  background-image: linear-gradient(var(--white), var(--white)) !important;  
+.main-button-white {
+  background-image: linear-gradient(var(--white), var(--white)) !important;
   color: var(--black);
   border: none;
   border-radius: 100px;
@@ -75,7 +75,7 @@ span {
   font-family: var(--font-host-grotesk);
   font-weight: 500;
 }
-.main-button-white:hover{
+.main-button-white:hover {
   color: white;
   background-image: linear-gradient(var(--black), var(--black)) !important;
 }
@@ -109,6 +109,77 @@ span {
 }
 select.form-control:not([size]):not([multiple]) {
   height: auto !important;
+}
+/* hero section */
+.hero_area {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.hero_area .hero_bg_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero_area .hero_bg_box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: right center;
+  object-position: right center;
+}
+
+.sub_page .hero_area {
+  min-height: auto;
+}
+
+.sub_page .hero_area .hero_bg_box img {
+  opacity: 0.4;
+}
+
+.header_section .container-fluid {
+  padding: 0 25px;
+}
+
+.slider_section {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.slider_section .row {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.slider_section .detail-box a:hover {
+  background-color: transparent;
+}
+
+.slider_section .img-box img {
+  width: 100%;
 }
 
 @media (max-width: 576px) {
