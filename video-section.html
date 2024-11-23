@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <title>Videos!</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- link for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/video-sectin.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  </head>
+  <body>
+    <section id="video-section" class="video-section container-fluid">
+      <h2 class="section-title">Pet Videos</h2>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input
+          type="text"
+          id="videoSearch"
+          class="search-input"
+          placeholder="Search pet videos..."
+        />
+      </div>
+
+      <!-- Video Cards Grid -->
+      <div class="row video-grid" id="videoGrid">
+        <!-- Videos -->
+        <div class="col-md-4 col-sm-6 mb-4 video-item">
+          <div class="card video-card">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe
+                class="embed-responsive-item"
+                src="https://www.youtube-nocookie.com/embed/e28-AugjVAw"
+                title="Adorable Puppy Playing"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Adorable Puppy Playing</h5>
+              <p class="card-text">Adorable puppy having fun!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-4 video-item">
+          <div class="card video-card">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe
+                class="embed-responsive-item"
+                src="https://www.youtube.com/embed/LXb3EKWsInQ"
+                title="Curious Cat Exploring"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Curious Cat Exploring</h5>
+              <p class="card-text">Curious cat on its adventures.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-4 video-item">
+          <div class="card video-card">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe
+                class="embed-responsive-item"
+                src="https://www.youtube.com/embed/J---aiyznGQ"
+                title="Parrot Talking Compilation"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Parrot Talking Compilation</h5>
+              <p class="card-text">Enjoy a compilation of parrots talking!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add hidden videos with the "hidden" class -->
+        <div class="col-md-4 col-sm-6 mb-4 video-item hidden">
+          <div class="card video-card">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe
+                class="embed-responsive-item"
+                src="https://www.youtube-nocookie.com/embed/e28-AugjVAw"
+                title="Adorable Puppy Playing 2"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Adorable Puppy Playing 2</h5>
+              <p class="card-text">Another playful puppy moment!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-4 video-item hidden">
+          <div class="card video-card">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe
+                class="embed-responsive-item"
+                src="https://www.youtube.com/embed/LXb3EKWsInQ"
+                title="Curious Cat Exploring 2"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Curious Cat Exploring 2</h5>
+              <p class="card-text">More curious cat adventures.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4 video-item hidden">
+          <div class="card video-card">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe
+                class="embed-responsive-item"
+                src="https://www.youtube-nocookie.com/embed/e28-AugjVAw"
+                title="Adorable Puppy Playing 2"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Adorable Puppy Playing 2</h5>
+              <p class="card-text">Another playful puppy moment!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4 video-item hidden">
+          <div class="card video-card">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe
+                class="embed-responsive-item"
+                src="https://www.youtube-nocookie.com/embed/e28-AugjVAw"
+                title="Adorable Puppy Playing 2"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Adorable Puppy Playing 2</h5>
+              <p class="card-text">Another playful puppy moment!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-4 video-item hidden">
+          <div class="card video-card">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe
+                class="embed-responsive-item"
+                src="https://www.youtube.com/embed/J---aiyznGQ"
+                title="Parrot Talking Compilation 2"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Parrot Talking Compilation 2</h5>
+              <p class="card-text">Another talking parrot session!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Explore More Button -->
+      <div class="text-center mt-4">
+        <button id="exploreMoreBtn" class="btn main-button">
+          Explore More
+        </button>
+      </div>
+    </section>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+      // Explore More Button Functionality
+      const exploreMoreBtn = document.getElementById("exploreMoreBtn");
+      const hiddenVideos = document.querySelectorAll(".video-item.hidden");
+
+      exploreMoreBtn.addEventListener("click", () => {
+        hiddenVideos.forEach((video) => {
+          video.classList.remove("hidden"); // Reveal hidden videos
+        });
+        exploreMoreBtn.style.display = "none"; // Hide the button after all videos are revealed
+      });
+
+      // Search Functionality
+      const searchInput = document.getElementById("videoSearch");
+      const videoItems = document.querySelectorAll(".video-item");
+
+      searchInput.addEventListener("input", (e) => {
+        const searchText = e.target.value.toLowerCase();
+        videoItems.forEach((videoItem) => {
+          const title = videoItem
+            .querySelector(".card-title")
+            .textContent.toLowerCase();
+          if (title.includes(searchText)) {
+            videoItem.style.display = "block";
+          } else {
+            videoItem.style.display = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
