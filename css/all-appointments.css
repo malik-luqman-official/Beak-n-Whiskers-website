@@ -1,0 +1,33 @@
+body {
+    background-color: #f9f9fa;
+  }
+  .card-title{
+    font-size: 25px!important;
+  }
+  .card {
+    border:none;
+    background-color: var(pink)!important;
+    border-radius: 30px;
+    padding: 20px 10px;
+    box-shadow: 0px 0px 15px 0px #7b7b7b4d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  .badge{
+    background-color: rgb(0, 0, 0)!important;
+    border-radius: 100px;
+    color: white!important;
+    font-weight: 400;
+    padding: 7px 20px;
+    font-size: 15px;
+  }
+  .meta-data{
+    background-color: rgb(238, 238, 238);
+    padding: 5px 10px;
+    font-size: 13px!important;
+    border-radius: 100px;
+    border: 1px solid rgb(231, 231, 231);
+  }

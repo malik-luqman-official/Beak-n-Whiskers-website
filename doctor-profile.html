@@ -24,8 +24,8 @@
     <link rel="stylesheet" href="css/doctor-profile.css" />
   </head>
   <body>
-    <!-- Profile Card Section -->
-    <div class="page-content page-container" id="page-content">
+    <!-- Doctor Profile Page -->
+    <div class="page-content page-container py-5" id="page-content">
       <div class="padding">
         <div class="row container-fluid d-flex justify-content-center">
           <div class="col-xl-6 col-md-12">
@@ -34,60 +34,61 @@
                 <!-- Left: Profile Information -->
                 <div class="col-sm-4 bg-c-lite-green user-profile pt-3">
                   <div class="card-block text-center text-white">
-                    <div class="m-b-25">
-                      <img
-                        src="https://img.icons8.com/bubbles/100/000000/user.png"
-                        class="img-radius"
-                        alt="User-Profile-Image"
-                      />
-                    </div>
-                    <h6 class="f-w-600">Dr. John Smith</h6>
-                    <p>Cardiologist</p>
-                    <div class="mt-2">
-                      <button class="btn btn-floating btn-sm main-button">
-                        Edit Profile
-                      </button>
+                    <h2 id="doctorName">Dr. John Smith</h2>
+                    <p id="doctorSpecialization">Cardiologist</p>
+                    <div class="mt-5">
+                      <a href="edit-doctor-profile.html?id=123" id="editBtn">
+                        <button class="btn main-button-white">
+                          Edit Profile
+                        </button>
+                      </a>
+                      <br />
+                      <a href="all-appointments.html">
+                        <button
+                          class="btn main-button-white mt-3"
+                          id="deleteBtn"
+                        >
+                          View Appointments
+                        </button>
+                      </a>
                     </div>
                   </div>
                 </div>
                 <!-- Right: Additional Information -->
                 <div class="col-sm-8 py-3">
                   <div class="card-block">
-                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">
-                      Doctor Information
-                    </h6>
-                    <div class="row">
+                    <h4 class="m-b-20 p-b-5 b-b-default f-w-600">
+                      Information
+                    </h4>
+                    <hr />
+                    <div class="row pt-4">
                       <div class="col-sm-6">
-                        <p class="m-b-10 f-w-400">Email</p>
-                        <h6 class="text-muted f-w-400">dr1@example.com</h6>
+                        <h6 class="m-b-10 f-w-400">Email</h6>
+                        <p id="doctorEmail" class="text-muted f-w-400">
+                          dr1@example.com
+                        </p>
                       </div>
                       <div class="col-sm-6">
-                        <p class="m-b-10 f-w-400">Phone</p>
-                        <h6 class="text-muted f-w-400">(123) 456-7890</h6>
+                        <h6 class="m-b-10 f-w-400">Phone</h6>
+                        <p id="doctorPhone" class="text-muted f-w-400">
+                          (123) 456-7890
+                        </p>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-sm-6">
-                        <p class="m-b-10 f-w-400">City</p>
-                        <h6 class="text-muted f-w-400">New York</h6>
-                      </div>
-                      <div class="col-sm-6">
-                        <p class="m-b-10 f-w-400">Specialty</p>
-                        <h6 class="text-muted f-w-400">Cardiology</h6>
+                        <h6 class="m-b-10 f-w-400">City</h6>
+                        <p id="doctorCity" class="text-muted f-w-400">
+                          New York
+                        </p>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-sm-12">
-                        <p class="m-b-10 f-w-400">Clinic Address</p>
-                        <h6 class="text-muted f-w-400">
+                        <h6 class="m-b-10 f-w-400">Clinic Address</h6>
+                        <p id="doctorClinic" class="text-muted f-w-400">
                           123 Health Blvd, New York, NY
-                        </h6>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <p class="m-b-10 f-w-400">Availability</p>
-                        <h6 class="text-muted f-w-400">Mon-Fri, 9AM-5PM</h6>
+                        </p>
                       </div>
                     </div>
                   </div>

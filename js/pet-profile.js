@@ -63,16 +63,19 @@ document.addEventListener('DOMContentLoaded', async function () {
             document.getElementById('petDob').innerText = formattedDate || 'N/A';
             document.getElementById('petBreed').innerText = petDetails.breed || 'N/A';
             document.getElementById('petNeutered').innerText = petDetails.neutered ? 'Yes' : 'No';
+
+            // Dynamically update the edit profile link with the petId
+            document.getElementById('editBtn').setAttribute('href', `edit-pet.html?id=${petId}`);
+
+            // Add delete functionality
+            const deleteButton = document.getElementById('deleteBtn');
+            deleteButton.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent default link behavior
+                deletePet(petId);
+            });
         } else {
             document.getElementById('pet-profile').innerHTML = '<p>Pet not found.</p>';
         }
-
-        // Add delete functionality
-        const deleteButton = document.getElementById('deleteBtn');
-        deleteButton.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent default link behavior
-            deletePet(petId);
-        });
 
     } catch (error) {
         console.error('Error fetching pet profile:', error);

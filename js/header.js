@@ -7,7 +7,7 @@ header.innerHTML = `
     <!-- Container wrapper -->
     <div class="container-fluid">
       <!-- Navbar brand -->
-      <a class="navbar-brand me-2 ml-3" href="#">
+      <a class="navbar-brand me-2 ml-3" href="index.html">
         <img
           src="images/logo/logo.png"
           height="auto"
@@ -67,8 +67,8 @@ header.innerHTML = `
               User Name
             </a>
             <ul class="dropdown-menu" aria-labelledby="userMenu">
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Logout</a></li>
+              <li><a class="dropdown-item" href="#" id="profileLink">Profile</a></li>
+              <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
             </ul>
           </div>
           <a href="add-pet.html">
@@ -101,29 +101,74 @@ const pageTitle = document.getElementById("page-title");
 const pageName = document.title || "Home";
 pageTitle.textContent = pageName;
 
+// Function to decode JWT payload
+function decodeJWT(token) {
+  const base64Url = token.split('.')[1]; // Get the payload part of the token
+  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/'); // Replace base64 URL encoding with standard base64 encoding
+  const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+
+  return JSON.parse(jsonPayload); // Return the decoded payload
+}
+
 // Toggle buttons based on login state
 function updateNavbar() {
-  const isLoggedIn = localStorage.getItem("jwtToken") !== null;
-  document.getElementById("loginBtn").style.display = isLoggedIn
-    ? "none"
-    : "block";
-  document.getElementById("signupBtn").style.display = isLoggedIn
-    ? "none"
-    : "block";
-  document.getElementById("userDropdown").style.display = isLoggedIn
-    ? "block"
-    : "none";
-  document.getElementById("addPetBtn").style.display = isLoggedIn
-    ? "block"
-    : "none";
+  const jwtToken = localStorage.getItem("jwtToken");
 
-  // If logged in, set the username if available
+  if (!jwtToken) {
+    return; // If there's no token, user is not logged in
+  }
+
+  const decodedToken = decodeJWT(jwtToken); // Decode JWT manually
+
+  const isLoggedIn = decodedToken != null;
+  document.getElementById("loginBtn").style.display = isLoggedIn ? "none" : "block";
+  document.getElementById("signupBtn").style.display = isLoggedIn ? "none" : "block";
+  document.getElementById("userDropdown").style.display = isLoggedIn ? "block" : "none";
+  document.getElementById("addPetBtn").style.display = isLoggedIn ? "block" : "none";
+
   if (isLoggedIn) {
-    const user = JSON.parse(localStorage.getItem("tokenObject"));
+    // Use decoded user data
+    const profileLink = document.getElementById("profileLink");
+
+    // Set user name in the dropdown
     document.getElementById("userDropdown").querySelector("a").textContent =
-      user?.fullName || "User";
+      decodedToken.fullName || "User";
+
+    // Adjust the profile link based on the user's role
+    if (decodedToken.role) {
+      if (decodedToken.role === 'user') {
+        profileLink.href = 'user-profile.html'; // Profile link for regular users
+      } else if (decodedToken.role === 'doctor') {
+        profileLink.href = 'doctor-profile.html'; // Profile link for doctors
+      }
+    } else {
+      console.error('User role is missing!');
+    }
   }
 }
+
+// Logout functionality
+document.getElementById("logoutBtn").addEventListener("click", () => {
+  // Remove JWT token and user data from localStorage
+  localStorage.removeItem("jwtToken");
+
+  // Update the navbar to reflect the logged-out state
+  updateNavbar();
+
+  // Optionally redirect to the login page
+  window.location.href = "sign-in.html"; // Redirect to login page or home page
+});
+
+// Hide the page-title-bg on the index.html page
+if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+  const pageTitleBg = document.querySelector(".page-title-bg");
+  if (pageTitleBg) {
+    pageTitleBg.style.display = "none";
+  }
+}
+
 
 // Call updateNavbar on page load
 updateNavbar();
