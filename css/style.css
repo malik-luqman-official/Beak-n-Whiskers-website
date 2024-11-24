@@ -198,3 +198,16 @@ select.form-control:not([size]):not([multiple]) {
     font-size: 0.9rem;
   }
 }
+
+
+
+ .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+
+
+.dropdown-item:active {
+  background-color: black;
+}

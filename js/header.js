@@ -5,7 +5,7 @@ header.innerHTML = `
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- Container wrapper -->
-    <div class="container-fluid">
+    <div class="container">
       <!-- Navbar brand -->
       <a class="navbar-brand me-2 ml-3" href="index.html">
         <img

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <title>Contact Us</title>
+    <!-- Bootstrap link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- Icons link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <style>
+      .info-box {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .info-box h4 {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 8px;
+      }
+      .info-box p {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.5;
+      }
+      .bnw-form {
+        padding: 20px;
+        max-width: 450px;
+        margin: auto;
+        border-radius: 8px;
+        background-color: #ffffff;
+      }
+      .bnw-form h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+      }
+      .bnw-form .form-group label {
+        font-size: 14px;
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+      .bnw-form-input {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+      
+      
+    </style>
+  </head>
+  <body style="background-color: #fffdf1">
+    <!-- Contact Section -->
+    <section class="contact_section layout_padding py-5">
+      <div class="container">
+        <div class="heading_container text-center mb-4">
+          <h2>Contact us</h2>
+        </div>
+        <div class="row g-4 align-items-center">
+          <!-- Left Section: Pet Owner and Doctor Information -->
+          <div class="col-md-6 d-flex flex-column align-items-center">
+            <!-- Contact Information 1 -->
+            <div class="info-box text-center">
+              <h4>Pet Owner Contact</h4>
+              <p>
+                If you are a pet owner and need assistance, feel free to reach
+                out to us. We are here to help you manage your pet's care and
+                provide the best service possible.
+              </p>
+            </div>
+            <!-- Contact Information 2 -->
+            <div class="info-box text-center">
+              <h4>Doctor to Get Approved</h4>
+              <p>
+                Are you a veterinarian looking to join our platform? Contact us
+                for details on how to get approved and start helping pets in
+                need.
+              </p>
+            </div>
+          </div>
+          <!-- Right Section: Contact Form -->
+          <div class="col-md-6">
+            <form id="contactForm" class="bnw-form shadow">
+              <h3 class="text-center mb-3">Get In Touch</h3>
+              <!-- Full Name -->
+              <div class="form-group mt-3">
+                <label for="fullName">Full Name *</label>
+                <input
+                  type="text"
+                  class="form-control bnw-form-input"
+                  name="fullName"
+                  id="fullName"
+                  placeholder="Your Full Name"
+                  required
+                />
+              </div>
+              <!-- Email -->
+              <div class="form-group mt-3">
+                <label for="email">E-mail *</label>
+                <input
+                  type="email"
+                  class="form-control bnw-form-input"
+                  name="email"
+                  id="email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <!-- Phone Number -->
+              <div class="form-group mt-3">
+                <label for="phoneNumber">Phone Number *</label>
+                <input
+                  type="text"
+                  class="form-control bnw-form-input"
+                  name="phoneNumber"
+                  id="phoneNumber"
+                  placeholder="Your Phone Number"
+                  required
+                />
+              </div>
+              <!-- Message -->
+              <div class="mt-3">
+                <label for="message">Message *</label>
+                <textarea
+                  class="form-control "
+                  name="message"
+                  id="message"
+                  rows="3"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+              <!-- Submit Button -->
+              <div class="text-center">
+                <button class="btn main-form-button mt-4" type="submit">
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
