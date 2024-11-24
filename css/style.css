@@ -19,8 +19,16 @@
   --bs-gutter-x: 0 !important;
 }
 
+select.form-control:not([size]):not([multiple]) {
+  text-transform: capitalize;
+}
+#petCategory{
+  text-transform: capitalize!important;
+}
+
 body {
   font-family: var(--font-host-grotesk) !important;
+  background-image: url(/images/image\ \(1\).webp);
 }
 
 /* LINKS */

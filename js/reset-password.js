@@ -41,6 +41,8 @@ const API_URL = 'http://localhost:3000/api/v1'; // Your API endpoint
             });
 
             const result = await response.json();  // Parse response
+            console.log(newPassword, confirmPassword)
+            console.log(response)
 
             if (response.ok) {
                 alert('Password reset successfully!');

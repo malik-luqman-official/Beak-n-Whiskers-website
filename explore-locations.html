@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Pet Places</title>
+    <style>
+        /* Add your styles for the map and list */
+    </style>
+</head>
+<body>
+    <h1>Nearby Pet Places</h1>
+    <div id="location-error" style="color: red;"></div>
+    <ul id="places-list"></ul>
+
+    <!-- Add your map integration here -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const apiKey = 'fsq3kdjzUPtGE5KxUesXsy+ClQTZeA4OE8Oe+RTJj1JfWRM='; // Foursquare API Key
+        const clientSecret = 'ICLVNHWI53PQLC30RCKEW4AVNDTCX0T1X5TB1ROPCYGHY1Q0'; // Foursquare Secret Key
+        
+        // Get the user's location
+        function getUserLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(fetchNearbyPlaces, showError);
+            } else {
+                document.getElementById('location-error').textContent = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById('location-error').textContent = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById('location-error').textContent = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById('location-error').textContent = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById('location-error').textContent = "An unknown error occurred.";
+                    break;
+            }
+        }
+
+        function fetchNearbyPlaces(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    $.ajax({
+        url: `https://api.foursquare.com/v3/places/search`,
+        method: 'GET',
+        data: {
+            ll: `${latitude},${longitude}`,
+            radius: 5000,
+            query: 'pet',
+        },
+        headers: {
+            Authorization: `Bearer YOUR_FOURSQUARE_BEARER_TOKEN`  // Replace with your actual Foursquare API token
+        },
+        success: function(data) {
+            displayPlaces(data.results);
+        },
+        error: function(error) {
+            console.error("Error fetching places:", error);
+            document.getElementById('location-error').textContent = "Error fetching places.";
+        }
+    });
+}
+
+
+
+        function displayPlaces(places) {
+            const placesList = document.getElementById('places-list');
+            placesList.innerHTML = '';  // Clear the list before adding new places
+
+            places.forEach(place => {
+                const li = document.createElement('li');
+                const name = place.name;
+                const address = place.location.address || 'Address not available';
+
+                li.textContent = `${name} - ${address}`;
+                li.onclick = () => openInGoogleMaps(place.location.lat, place.location.lng);
+                placesList.appendChild(li);
+            });
+        }
+
+        function openInGoogleMaps(lat, lon) {
+            const gmmIntentUri = `geo:0,0?q=${lat},${lon}`;
+            const mapIntent = new Intent("android.intent.action.VIEW", Uri.parse(gmmIntentUri));
+            mapIntent.setPackage("com.google.android.apps.maps");
+            window.open(gmmIntentUri, '_blank');
+        }
+
+        // Initialize the app
+        getUserLocation();
+    </script>
+</body>
+</html>

@@ -86,7 +86,7 @@ const displayAppointments = (appointments) => {
             <div class="card">
                 <div class="card-body">
                     <!-- Title with invitee name -->
-                    <h5 class="card-title mt-2">${inviteeName}</h5>
+                    <h5 class="card-title mt-2">${location}</h5>
                     <p class="text-muted mb-3">${inviteeEmail}</p>
                     
                     <!-- Badge for status -->
@@ -111,10 +111,7 @@ const displayAppointments = (appointments) => {
                         </div>
                     </div>
 
-                    <!-- View Details Button -->
-                    <a href="appointment-details.html?id=${appointment.calendar_event.external_id}">
-                        <button class="btn main-button btn-sm mt-4">View Details</button>
-                    </a>
+                    
                 </div>
             </div>
         `;

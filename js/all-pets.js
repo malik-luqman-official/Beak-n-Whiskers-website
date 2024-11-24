@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', async function () {
     const API_URL = 'http://localhost:3000/api/v1';
     const token = localStorage.getItem('jwtToken'); // Retrieve token from local storage
-    
+
     if (!token) {
         console.error("No token found in local storage.");
         alert('Please log in to access your pets.');
@@ -16,13 +16,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Extract doctorId from URL query string
     const urlParams = new URLSearchParams(window.location.search);
-    const doctorId = urlParams.get('doctorId');  // Assuming doctorId is passed in the URL
-
-    if (!doctorId) {
-        console.error("No doctorId found in the URL.");
-        alert('No doctor selected.');
-        return;
-    }
+    const doctorId = urlParams.get('doctorId'); // Assuming doctorId is passed in the URL
 
     try {
         const response = await fetch(`${API_URL}/pet/user/${userId}`, {
@@ -61,27 +55,35 @@ document.addEventListener('DOMContentLoaded', async function() {
                                 <div class="d-flex align-items-center mb-2">
                                     <span class="ms-2 text-muted meta-data">${pet.gender}</span>
                                 </div>
-                            </div>
+                            </div class="mt-5">
+                            <div>
                             <a href="pet-profile.html?id=${pet._id}">
-                                <button class="btn main-button mt-4">View Pet Details</button>
+                                <button class="btn mt-4 main-button ">View Pet Details</button>
                             </a>
-                            <button class="btn main-button mt-3 selectPetButton" data-pet-id="${pet._id}" data-doctor-id="${doctorId}">Select Pet</button>
+                            ${
+                                doctorId
+                                    ? `<button class="btn mt-4 main-button selectPetButton" data-pet-id="${pet._id}" data-doctor-id="${doctorId}">Select Pet</button>`
+                                    : ''
+                            }
+                            <div>
                         </div>
                     </div>
                 `;
                 petCardsContainer.appendChild(petCard);
             });
 
-            // Handle select pet button click
-            const selectButtons = document.querySelectorAll('.selectPetButton');
-            selectButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const petId = this.getAttribute('data-pet-id');
-                    const doctorId = this.getAttribute('data-doctor-id');
-                    // Redirect to the appointment page with selected petId and doctorId
-                    window.location.href = `assign-appointment.html?doctorId=${doctorId}&petId=${petId}`;
+            // Handle "Select Pet" button click if doctorId exists
+            if (doctorId) {
+                const selectButtons = document.querySelectorAll('.selectPetButton');
+                selectButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const petId = this.getAttribute('data-pet-id');
+                        const doctorId = this.getAttribute('data-doctor-id');
+                        // Redirect to the appointment page with selected petId and doctorId
+                        window.location.href = `assign-appointment.html?doctorId=${doctorId}&petId=${petId}`;
+                    });
                 });
-            });
+            }
         } else {
             petCardsContainer.innerHTML = '<p>No pets found.</p>';
         }
