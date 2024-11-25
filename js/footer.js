@@ -15,6 +15,7 @@ footer.innerHTML = `
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="footer-logo mb-3">
                 <h3 class="text-light">Beak n Whiskers</h3>
+              
             </div>
 
           </div>
@@ -23,10 +24,10 @@ footer.innerHTML = `
           <div class="col-lg-4 col-md-6 mb-4">
             <h5 class="text-uppercase mb-4">Menu</h5>
             <ul class="list-unstyled">
-              <li class="mb-2"><a href="#" class="text-light">Home</a></li>
-              <li class="mb-2"><a href="#" class="text-light">About</a></li>
-              <li class="mb-2"><a href="#" class="text-light">Services</a></li>
-              <li class="mb-2"><a href="#" class="text-light">Contact Us</a></li>
+              <li class="mb-2"><a href="index.html" class="text-light">Home</a></li>
+              <li class="mb-2"><a href="videos.html" class="text-light">Watch Videos</a></li>
+              <li class="mb-2"><a href="explore-locations.html" class="text-light">Explore Locations</a></li>
+              <li class="mb-2"><a href="contact-us.html" class="text-light">Contact Us</a></li>
             </ul>
           </div>
 
@@ -40,15 +41,15 @@ footer.innerHTML = `
               </li>
               <li class="mb-3">
                 <span class="fa-li"><i class="fas fa-envelope"></i></span>
-                <a class="text-light">info@example.com</a>
+                <a class="text-light" href="mailto:info@example.com">info@example.com</a>
               </li>
               <li class="mb-3">
                 <span class="fa-li"><i class="fas fa-phone"></i></span>
-                <a class="text-light">+ 01 234 567 88</a>
+                <a class="text-light" href="tel:01 234 567 88">+ 01 234 567 88</a>
               </li>
               <li class="mb-3">
                 <span class="fa-li"><i class="fas fa-print"></i></span>
-                <a class="text-light">+ 01 234 567 89</a>
+                <a class="text-light" h>+ 01 234 567 89</a>
               </li>
             </ul>
           </div>
@@ -60,9 +61,10 @@ footer.innerHTML = `
       <!-- Grid container -->
 
       <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: #ff9972">
-        © 2024 Copyright
-        <a>Beak n Whiskers</a>
+      <div class="text-center p-3 pb-1" style="background-color: #ff9972">
+      <p style="color:black!important">
+        © 2024 Copyright Beak n Whiskers
+      <p>
       </div>
       <!-- Copyright -->
 

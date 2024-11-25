@@ -36,16 +36,16 @@ header.innerHTML = `
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 ml-5 mb-lg-0">
           <li class="nav-item ml-2">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item ml-2">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="videos.html">Watch Videos</a>
           </li>
           <li class="nav-item ml-2">
-            <a class="nav-link" href="#">Services</a>
+            <a class="nav-link" href="explore-locations.html">Explore Locations</a>
           </li>
           <li class="nav-item ml-2">
-            <a class="nav-link" href="#">Contact Us</a>
+            <a class="nav-link" href="contact-us.html">Contact Us</a>
           </li>
         </ul>
         <!-- Left links -->
@@ -69,6 +69,8 @@ header.innerHTML = `
             </a>
             <ul class="dropdown-menu" aria-labelledby="userMenu">
               <li><a class="dropdown-item" href="#" id="profileLink">Profile</a></li>
+              <li><a class="dropdown-item" href="all-pets.html" id="allPetsLink">View All Pets</a></li>
+              <li><a class="dropdown-item" href="forget-password.html"">Change Password</a></li>
               <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
             </ul>
           </div>
@@ -92,10 +94,12 @@ header.innerHTML = `
   <!-- end of header -->
 
   <div class="container-fluid page-title-bg">
-    <div class="overlay">
+  <div class=" overlay">
+    <div class="container">
       <div class="content">
         <h1 class="title" id="page-title">Title</h1>
       </div>
+    </div>
     </div>
   </div>
 `;
@@ -136,6 +140,7 @@ function updateNavbar() {
   const addPetLink = addPetBtn.closest("a"); // Get the parent <a> element
   const bookAppointmentBtn = document.getElementById("bookAppointmentBtn");
   const bookAppointmentLink = bookAppointmentBtn.closest("a"); // Get the parent <a> element
+  const allPetsLink = document.getElementById("allPetsLink")
 
   if (isLoggedIn) {
     // Use decoded user data
@@ -163,6 +168,7 @@ function updateNavbar() {
         addPetLink.href = "all-appointments.html"; // Set the correct link for doctors
 
         bookAppointmentBtn.style.display = "none"; // Hide for doctors
+        allPetsLink.style.display = "none"
       }
     } else {
       console.error('User role is missing!');

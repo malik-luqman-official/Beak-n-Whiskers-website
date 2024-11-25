@@ -21,7 +21,7 @@ document.getElementById('signInForm').addEventListener('submit', async function(
         localStorage.setItem('jwtToken', result.jwtToken);
         alert('Login successful!');
 
-        window.location.href = '/all-pets.html';
+        window.location.href = 'index.html';
       } else {
         alert(result.message || 'Login failed');
       }

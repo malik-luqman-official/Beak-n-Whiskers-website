@@ -17,7 +17,7 @@ z-index: 99;
 
 .title {
   color: #ffffff!important;
-  text-align: center;
+  text-align: left;
   height: 250px;
   line-height: 250px;
 }
@@ -31,7 +31,7 @@ z-index: 99;
   background-color: #dbdbdb;
   /* padding: 50px 0; */
   background-image: url(../images/pexels-wildlittlethingsphoto-1938123.jpg);
-  background-position: center;
+  background-position: 0% 57%;  ;
   /* height: 250px; */
   align-items: center;
 }

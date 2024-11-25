@@ -211,3 +211,12 @@ select.form-control:not([size]):not([multiple]) {
 .dropdown-item:active {
   background-color: black;
 }
+
+
+.hero_section{
+  background-image: url(images/hero-bg.jpg);
+}
+
+.badge{
+  text-transform: capitalize!important;
+}

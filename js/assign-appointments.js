@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
                 
                     alert("Appointment assigned successfully!");
-                    window.location.href = `book-on-calendly.html?doctorId=${selectedDoctor._id}`; // Include doctorId in the query
+                    window.location.href = `book-on-calendly.html?doctorId=${selectedDoctor._id}`; 
                 
             } catch (error) {
                 console.error("Error assigning appointment:", error);

@@ -24,10 +24,27 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/all-pets.css" />
   </head>
+
+  <style>
+    /* Hero Section Background Image */
+    .hero_section {
+      background-image: url('images/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    /* Align text left in second and third sections */
+    .pet_profile_section .col-md-6, .appointment_section .col-md-6 {
+      text-align: left;
+    }
+  </style>
+
   <body>
     <!-- Hero Section -->
-    <section class="hero_section bg-light text-dark py-5">
+    <section class="hero_section bg-light text-dark" style="padding: 150px 0;">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6">
@@ -39,25 +56,19 @@
               covered.
             </p>
             <div class="mt-4">
-              <a href="app-download-link" class="btn main-button me-3"
-                >Download Now</a
-              >
-              <a href="#about-us" class="btn main-button">Learn More</a>
+              <a href="https://play.google.com/store/games?hl=en" target="_blank" class="btn main-button me-3">Download Now</a>
+              <a href="contact-us.html" class="btn main-button">Contact Us</a>
             </div>
           </div>
           <div class="col-md-6">
-            <img
-              src="images/hero-bg.jpg"
-              alt="Pets"
-              class="img-fluid rounded"
-            />
+            
           </div>
         </div>
       </div>
     </section>
 
     <!-- Pet Profile Section -->
-    <section class="pet_profile_section bg-white py-5">
+    <section class="pet_profile_section bg-white "  style="padding: 100px 0;">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6">
@@ -65,9 +76,10 @@
               src="images/petprofile.jpeg"
               alt="Pet Profiles"
               class="img-fluid rounded"
+              style="border-radius: 50px;"
             />
           </div>
-          <div class="col-md-6 text-center">
+          <div class="col-md-6 pl-5">
             <h2 class="fw-bold">Create Detailed Profiles for Every Pet</h2>
             <p class="mt-3">
               Our Pet Profiles feature allows you to store essential details
@@ -77,9 +89,9 @@
               health.
             </p>
             <div class="mt-4">
-              <a href="#pet-profiles" class="btn main-button"
-                >Get Started with Pet Profiles</a
-              >
+              <a href="add-pet.html" class="btn main-button">
+                Get Started with Pet Profiles
+              </a>
             </div>
           </div>
         </div>
@@ -87,10 +99,10 @@
     </section>
 
     <!-- Book an Appointment Section -->
-    <section class="appointment_section bg-light py-5">
+    <section class="appointment_section bg-light" style="padding: 100px 0;">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-md-6 text-center">
+          <div class="col-md-6 pr-5">
             <h2 class="fw-bold">
               Schedule Veterinary Appointments in a Few Taps
             </h2>
@@ -101,9 +113,7 @@
               right from the app.
             </p>
             <div class="mt-4">
-              <a href="#book-appointment" class="btn main-button"
-                >Book an Appointment Now</a
-              >
+              <a href="all-doctors.html" class="btn main-button">Book an Appointment Now</a>
             </div>
           </div>
           <div class="col-md-6">
@@ -118,52 +128,39 @@
     </section>
 
     <!-- More Ways to Make Pet Care Simple -->
-    <section class="pet_care_section bg-white py-5">
+    <section class="pet_care_section bg-white" style="padding: 100px 0;">
       <div class="container">
         <h2 class="text-center fw-bold mb-5">
           More Ways to Make Pet Care Simple
         </h2>
-        <div class="row text-center">
+        <div class="row text-center d-flex justify-content-center">
           <!-- Videos -->
-          <div class="col-md-4">
+          <div class="col-md-4 card m-3 p-5">
             <i class="fas fa-video fa-3x text-primary mb-3"></i>
             <h4 class="fw-bold">Videos</h4>
             <p>
               Browse our video library filled with pet care tips, training
               guides, and fun content to keep you informed and entertained.
             </p>
-            <a href="#videos" class="btn main-button">Explore Videos</a>
+            <a href="videos.html" class="btn main-button">Explore Videos</a>
           </div>
           <!-- Nearby Places -->
-          <div class="col-md-4">
+          <div class="col-md-4 card m-3 p-5">
             <i class="fas fa-map-marker-alt fa-3x text-success mb-3"></i>
             <h4 class="fw-bold">Nearby Places</h4>
             <p>
               Find pet-friendly locations near you, including parks, stores, and
               vet clinics, using our integration with Google Maps.
             </p>
-            <a href="#nearby-places" class="btn main-button"
-              >Discover Nearby Places</a
-            >
+            <a href="explore-locations.html" class="btn main-button">Discover Nearby Places</a>
           </div>
-          <!-- To-Do List -->
-          <div class="col-md-4">
-            <i class="fas fa-clipboard-list fa-3x text-warning mb-3"></i>
-            <h4 class="fw-bold">To-Do List</h4>
-            <p>
-              Stay organized with a personal To-Do list for pet care tasks like
-              feeding schedules, medication reminders and appointments.
-            </p>
-            <a href="#todo-list" class="btn main-button"
-              >Get Started with To-Do List</a
-            >
-          </div>
+          
         </div>
       </div>
     </section>
 
     <!-- Download App Section -->
-    <section class="download_section bg-light py-5">
+    <section class="download_section bg-light " style="padding: 100px 0;">
       <div class="container text-center">
         <h2 class="fw-bold">Ready to Simplify Pet Care?</h2>
         <p class="mt-3">
@@ -171,9 +168,9 @@
           stress-free pet care!
         </p>
         <div class="mt-4">
-          <a href="app-download-link" class="btn main-button btn-lg"
-            >Download the App</a
-          >
+          <a href="https://play.google.com/store/games?hl=en" target="_blank" class="btn main-button btn-lg">
+            Download the App
+          </a>
         </div>
       </div>
     </section>
