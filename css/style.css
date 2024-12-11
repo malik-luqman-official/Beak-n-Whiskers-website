@@ -22,8 +22,8 @@
 select.form-control:not([size]):not([multiple]) {
   text-transform: capitalize;
 }
-#petCategory{
-  text-transform: capitalize!important;
+#petCategory {
+  text-transform: capitalize !important;
 }
 
 body {
@@ -199,24 +199,19 @@ select.form-control:not([size]):not([multiple]) {
   }
 }
 
-
-
- .card-img-top {
+.card-img-top {
   height: 200px;
   object-fit: cover;
 }
-
-
 
 .dropdown-item:active {
   background-color: black;
 }
 
-
-.hero_section{
+.hero_section {
   background-image: url(images/hero-bg.jpg);
 }
 
-.badge{
-  text-transform: capitalize!important;
+.badge {
+  text-transform: capitalize !important;
 }
